@@ -58,6 +58,6 @@ jobs:
         key: ${{ secrets.SERVER_SSH_PRIVATE_KEY }}
         passphrase: ${{ secrets.SERVER_SSH_PASSPHRASE }}
         script: |
-          echo "PORT=${{ secrets.PORT }}" > /home/${{ secrets.PORT }}/scripts/${{ env.IMAGE_NAME }}.env
+          echo "PORT=${{ secrets.PORT }}" > /home/${{ secrets.SERVER_USERNAME }}/scripts/${{ env.IMAGE_NAME }}.env
           cd /home/${{ secrets.SERVER_USERNAME }}/scripts
           ./deploy_container.sh ${{ env.IMAGE_NAME }}
